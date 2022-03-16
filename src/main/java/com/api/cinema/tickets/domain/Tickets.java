@@ -1,32 +1,43 @@
 package com.api.cinema.tickets.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class Tickets {
 
 	//Variables - columns in the table
+	@Id //primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String Title;
-	private int Screen;
-	private char Row;
-	private int SeatNum;
+	
+	
+	private String title;
+	private Long screen;
+	private char seatRow;
+	private Long seatNum;
 	
 	//Constructors - 3 types
 	public Tickets() {
 		super();
 	}
-	public Tickets(String title, int screen, char row, int seatNum) {
+	public Tickets(String title, Long screen, char seatRow, Long seatNum) {
 		super();
-		Title = title;
-		Screen = screen;
-		Row = row;
-		SeatNum = seatNum;
+		this.title = title;
+		this.screen = screen;
+		this.seatRow = seatRow;
+		this.seatNum = seatNum;
 	}
-	public Tickets(Long id, String title, int screen, char row, int seatNum) {
+	public Tickets(Long id, String title, Long screen, char seatRow, Long seatNum) {
 		super();
 		this.id = id;
-		Title = title;
-		Screen = screen;
-		Row = row;
-		SeatNum = seatNum;
+		this.title = title;
+		this.screen = screen;
+		this.seatRow = seatRow;
+		this.seatNum = seatNum;
 	}
 	
 	//Getters and setters
@@ -37,27 +48,27 @@ public class Tickets {
 		this.id = id;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
-	public int getScreen() {
-		return Screen;
+	public Long getScreen() {
+		return screen;
 	}
-	public void setScreen(int screen) {
-		Screen = screen;
+	public void setScreen(Long screen) {
+		this.screen = screen;
 	}
-	public char getRow() {
-		return Row;
+	public char getSeatRow() {
+		return seatRow;
 	}
-	public void setRow(char row) {
-		Row = row;
+	public void setSeatRow(char seatRow) {
+		this.seatRow = seatRow;
 	}
-	public int getSeatNum() {
-		return SeatNum;
+	public Long getSeatNum() {
+		return seatNum;
 	}
-	public void setSeatNum(int seatNum) {
-		SeatNum = seatNum;
+	public void setSeatNum(Long seatNum) {
+		this.seatNum = seatNum;
 	}
 }

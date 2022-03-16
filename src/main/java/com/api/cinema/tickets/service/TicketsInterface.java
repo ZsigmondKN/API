@@ -11,8 +11,10 @@ public interface TicketsInterface {
 	Tickets create(Tickets x);
 	
 	List<Tickets> read();
+
+	Tickets update(Long id, Tickets y);
+
+	Tickets delete(Long id);
 	
-	Tickets update(int id, Tickets y);
-	
-	Tickets delete(int id);
+	boolean remove(Long id);
 }
