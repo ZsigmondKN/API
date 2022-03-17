@@ -2,8 +2,6 @@ package com.api.cinema.tickets.rest;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -53,15 +51,14 @@ public class TicketsController {
 		return new ResponseEntity<Tickets>(this.service.update(id, updated), HttpStatus.ACCEPTED);
 	}
 	
-	//Delete
+	// DELETE
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<Tickets> delete(@PathParam("id") Long id) {
-		return new ResponseEntity<Tickets>(this.service.delete(id), HttpStatus.ACCEPTED);
+	public Tickets delete(@PathVariable Long id) {
+		return this.service.delete(id);
 	}
-	
-	//Remove
+		
 	@DeleteMapping("/remove/{id}")
-	public boolean remove(@PathParam("id") Long id) {
+	public boolean remove(@PathVariable Long id) {
 		return this.service.remove(id);
 	}
 }

@@ -50,7 +50,7 @@ public class TicketsServiceDB implements TicketsInterface{
 		this.repo.deleteById(id);
 		return toDelete.orElse(null);
 	}
-	
+
 	public boolean remove(Long id) {
 		this.repo.deleteById(id);
 		return !this.repo.existsById(id);

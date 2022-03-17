@@ -15,6 +15,4 @@ public interface TicketsInterface {
 	Tickets update(Long id, Tickets y);
 
 	Tickets delete(Long id);
-	
-	boolean remove(Long id);
 }
