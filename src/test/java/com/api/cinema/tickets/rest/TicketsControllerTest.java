@@ -2,6 +2,7 @@ package com.api.cinema.tickets.rest;
 
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -50,6 +51,20 @@ public class TicketsControllerTest {
 		ResultMatcher matchBody = content().json(savedJSON);
 		//perform test
 		this.mock.perform(mocRequest).andExpect(matchStatus).andExpect(matchBody);
+	}
+	
+	@Test
+	void testReadOne() throws Exception {
+		//Request
+		Long id = 1L;
+		RequestBuilder mockRequest = get("/readById/"+id);
+		Tickets expectedResponse = new Tickets(1L,"Lost",4L,'H',15L);
+		String expectedResponseJSON = this.map.writeValueAsString(expectedResponse);
+		//Response
+		ResultMatcher body = content().json(expectedResponseJSON);
+		ResultMatcher matchStatus = status().isFound();
+		//Test
+		this.mock.perform(mockRequest).andExpect(body).andExpect(matchStatus);
 	}
 	
 	@Test

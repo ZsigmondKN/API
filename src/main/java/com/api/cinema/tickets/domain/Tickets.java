@@ -73,10 +73,9 @@ public class Tickets {
 	public void setSeatNum(Long seatNum) {
 		this.seatNum = seatNum;
 	}
-	
 	@Override
 	public int hashCode() {
-		return Objects.hash(screen, seatNum, seatRow, title);
+		return Objects.hash(id, screen, seatNum, seatRow, title);
 	}
 	@Override
 	public boolean equals(Object obj) {

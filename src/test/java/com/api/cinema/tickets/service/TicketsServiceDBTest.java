@@ -85,7 +85,7 @@ public class TicketsServiceDBTest {
 		// To object
 		Optional<Tickets> opt = Optional.of(returned);
 		// Update
-		Tickets updated = new Tickets(toUpdate.getTitle(), toUpdate.getScreen(), toUpdate.getSeatRow(), toUpdate.getSeatNum());
+		Tickets updated = new Tickets(id, toUpdate.getTitle(), toUpdate.getScreen(), toUpdate.getSeatRow(), toUpdate.getSeatNum());
 		// When
 		Mockito.when(this.rep.findById(id)).thenReturn(opt);
 		Mockito.when(this.rep.save(updated)).thenReturn(updated);
