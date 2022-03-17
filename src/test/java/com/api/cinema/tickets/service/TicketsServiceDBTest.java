@@ -78,20 +78,20 @@ public class TicketsServiceDBTest {
 	
 	@Test
 	void testUpdate() {
-		// GIVEN - id, object
+		// Given
 		Long id = 1L;
-		// NEW ANIMAL OBJECT FOR INPUT TO UPDATE METHOD
+		// To update
 		Tickets toUpdate = new Tickets("Avatar",5L,'H',6L);
-		// METHOD USES AN OPTIONAL VERSION OF THE ANIMAL OBJECT
+		// To object
 		Optional<Tickets> opt = Optional.of(returned);
-		// UPDATED VERSION:
+		// Update
 		Tickets updated = new Tickets(toUpdate.getTitle(), toUpdate.getScreen(), toUpdate.getSeatRow(), toUpdate.getSeatNum());
-		// WHEN
+		// When
 		Mockito.when(this.rep.findById(id)).thenReturn(opt);
 		Mockito.when(this.rep.save(updated)).thenReturn(updated);
-		// THEN
+		// Then
 		assertThat(this.serv.update(id, toUpdate)).isEqualTo(updated);
-		// VERIFY
+		// Verify
 		Mockito.verify(this.rep, Mockito.times(1)).findById(id);
 		Mockito.verify(this.rep, Mockito.times(1)).save(updated);
 	}
