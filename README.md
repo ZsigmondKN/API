@@ -35,3 +35,9 @@ Pictures of the functionality of the API:
 
 ### Test Coverage 
 ![This is an image](https://i.postimg.cc/fWrYbmg4/Capture6.png)
+
+### APR ERD
+![This is an image](https://i.postimg.cc/0j1j6YFn/API-ERD-Sheet1.png)
+
+### Risk Assessment
+![This is an image](https://i.postimg.cc/XYYJy7HR/API-Risk-Assessment-Sheet1.png)
